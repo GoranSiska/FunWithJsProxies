@@ -48,20 +48,20 @@ describe("Given Proxy limitations", () => {
 				return _codeNames.get(this);
 			}
 		};
-		it("With PersonWithSected codeName, codeName is returned.", () => {
+		it("With PersonWithSecret codeName, codeName is returned.", () => {
 			const person = new PersonWithSecret("John", "Wick", 32, "007");
 	
 			expect(person.firstName).to.eq("John");
 			expect(person.codeName).to.eq("007");
 		}),
-		it("With PersonWithSected proxy, codeName is undefined", () => {
+		it("With PersonWithSecret proxy, codeName is undefined", () => {
 			const originalPerson = new PersonWithSecret("John", "Wick", 32, "007");
 			const person = new Proxy<PersonWithSecret>(originalPerson, {});
 	
 			expect(person.firstName).to.eq("John");
 			expect(person.codeName).to.be.undefined;
 		});
-		it("With PersonWithSected proxy and context switch, codeName is returned", () => {
+		it("With PersonWithSecret proxy and context switch, codeName is returned", () => {
 			const originalPerson = new PersonWithSecret("John", "Wick", 32, "007");
 			const person = new Proxy<PersonWithSecret>(originalPerson, {
 				get(target: any, property: string, receiver: any): any {

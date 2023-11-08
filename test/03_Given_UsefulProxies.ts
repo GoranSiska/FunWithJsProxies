@@ -67,7 +67,7 @@ describe("Given useful proxies", () => {
 			originalPerson = new Person("John", "Wick", 32);
 			originalPerson.address = new Address("Continental", 1, "New York");
 		})
-		it("When setting nested propery, event is not raised", () => {
+		it("When setting nested property, event is not raised", () => {
 			const handler = {
 				path: "Person.",
 				set(target: any, property: any, value: any, receiver: any): boolean {
@@ -88,7 +88,7 @@ describe("Given useful proxies", () => {
 			expect(log).to.not.contain("Person.address.city changed from New York to Chicago");
 		});
 
-		it("With recursive proxy, when setting nested propery, event is raised", () => {
+		it("With recursive proxy, when setting nested property, event is raised", () => {
 			const handler = {
 				path: "Person.",
 				get(target: any, property: any, receiver: unknown): any {

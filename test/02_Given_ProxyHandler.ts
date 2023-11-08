@@ -49,7 +49,7 @@ class FullHandler implements ProxyHandler<any> {
 		this.log += message + ";";
 		return Reflect.construct(target, argumentsList, newTarget);
 	}
-	getPrototypeOf(target: object): object {
+	getPrototypeOf(target: object): object | null {
 		const message = `Getting prototype of the target`;
 		console.log(message);
 		this.log += message + ";";
@@ -71,7 +71,7 @@ class FullHandler implements ProxyHandler<any> {
 		this.log += message + ";";
 		return Reflect.preventExtensions(target);
 	}
-	getOwnPropertyDescriptor(target: any, property: any): TypedPropertyDescriptor<any> {
+	getOwnPropertyDescriptor(target: any, property: any): TypedPropertyDescriptor<any> | undefined {
 		const message = `Getting property descriptor: ${property}`;
 		console.log(message);
 		this.log += message + ";";

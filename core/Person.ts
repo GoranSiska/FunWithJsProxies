@@ -2,7 +2,7 @@ import { Address } from "./Address";
 
 export class Person {
     firstName: string;
-    lastName: string;
+    lastName?: string;
     age: number;
     address: Address;
     constructor(firstName: string, lastName: string, age: number) {
