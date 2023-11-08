@@ -3,5 +3,6 @@
 		"powr",
 		"powre",
 		"proxied"
-	]
+	],
+	"dimmer.enabled": false
 }
